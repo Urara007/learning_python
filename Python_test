@@ -1,0 +1,49 @@
+def top_k(data, k):
+    arr = list(data)
+    n = len (arr)
+
+    for i in range(k):
+        max_idx = i
+        for j in range(i + 1,n):
+            if arr[j][0] > arr[max_idx][0]:
+                max_idx = j
+        arr[i],arr[max_idx], arr[max_idx], arr[i]
+        
+        return arr[:k]
+items = [("A", 90), ("B", 95), ("C", 95), ("D", 85)]
+k = 2
+def top_k(items, k):
+    return sorted(items, key=lambda x: x[1], reverse=True)[:k]
+def count_by_category(pairs):
+    d = {}
+    for cat, word in pairs:
+        d.setdefault(cat, {})
+        d[cat].setdefault(word, 0)
+        d[cat][word] += 1
+    return d
+
+pairs = [("sports","win"), ("sports","win"), ("tech","ai")]
+print(count_by_category(pairs))
+def missing_numbers(nums):
+    n = len(nums)
+    total = n*(n+1) // 2
+    return total - sum(nums)
+def add_unique(x,seen=None):
+    if seen is None:
+        seen = set()
+        if x not i n seen:
+           seen.add(x)
+           return seen
+        
+         
+
+
+def moving_average(stream,w):
+    result = []
+    for i in range(len(stream)):
+        start = ,ax(0, i - w + 1)
+        window = stream[start:i+1]
+        avg = sum(window) / len(window)
+        result.append(avg)
+    return result
+
